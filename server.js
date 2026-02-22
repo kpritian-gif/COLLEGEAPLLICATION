@@ -4,11 +4,12 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const XLSX = require("xlsx");
 const fs = require("fs");
+const path = require("path"); // Added for handling file paths
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000; // Render uses 10000 by default
 
-// ----- Security: Helmet (headers) -----
+// ----- Security: Helmet -----
 app.use(helmet({
   contentSecurityPolicy: false,
   crossOriginEmbedderPolicy: false
@@ -22,7 +23,6 @@ const submitLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false
 });
-app.use("/submit", submitLimiter);
 
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,
@@ -31,15 +31,17 @@ const apiLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false
 });
+
+// Apply limiters
+app.use("/submit", submitLimiter);
 app.use("/applications", apiLimiter);
 
-// ----- Body parser (limit payload size) -----
+// ----- Middleware -----
 app.use(bodyParser.json({ limit: "50kb" }));
-app.use(express.static("public"));
+// This serves your CSS, images, and client-side JS from the 'public' folder
+app.use(express.static(path.join(__dirname, "public")));
 
 const filePath = "applications.xlsx";
-
-const MAX_STR = 500;
 const ALLOWED_KEYS = new Set([
   "name", "dob", "gender", "email", "phone", "nationality", "bloodGroup",
   "category", "religion", "tenth", "twelfth", "tenthBoard", "twelfthBoard",
@@ -48,9 +50,10 @@ const ALLOWED_KEYS = new Set([
   "guardianEmail", "departme", "year", "timestamp"
 ]);
 
+// ----- Helper Functions -----
 function sanitize(str) {
   if (typeof str !== "string") return "";
-  return str.trim().slice(0, MAX_STR).replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, "");
+  return str.trim().slice(0, 500).replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, "");
 }
 
 function sanitizePayload(body) {
@@ -75,6 +78,14 @@ function ensureExcelFile() {
   }
 }
 
+// ----- ROUTES -----
+
+// 1. HOME ROUTE (This fixes your "Cannot GET /" error)
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+// 2. SUBMIT ROUTE
 app.post("/submit", (req, res) => {
   ensureExcelFile();
   const raw = req.body && typeof req.body === "object" ? req.body : {};
@@ -94,11 +105,12 @@ app.post("/submit", (req, res) => {
     XLSX.writeFile(workbook, filePath);
     res.json({ message: "Application saved successfully" });
   } catch (err) {
-    console.error(err);
+    console.error("Excel Save Error:", err);
     res.status(500).json({ message: "Server error. Please try again." });
   }
 });
 
+// 3. APPLICATIONS VIEW ROUTE
 app.get("/applications", (req, res) => {
   ensureExcelFile();
   try {
@@ -107,11 +119,12 @@ app.get("/applications", (req, res) => {
     const data = XLSX.utils.sheet_to_json(sheet);
     res.json(data);
   } catch (err) {
-    console.error(err);
+    console.error("Excel Read Error:", err);
     res.status(500).json([]);
   }
 });
 
+// ----- START SERVER -----
 app.listen(PORT, () => {
-  console.log("Server running at http://localhost:" + PORT);
+  console.log(`Server running on port ${PORT}`);
 });
