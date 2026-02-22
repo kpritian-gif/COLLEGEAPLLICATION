@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin – KPRIT Admission Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page">
+  <header class="topbar">
+    <a href="/" class="logo">
+      <span class="logo-icon">📚</span>
+      <span class="logo-text">KPRIT Admin</span>
+    </a>
+    <a href="/" class="admin-btn">Back to Portal</a>
+  </header>
+
+  <div class="admin-wrap">
+    <div class="admin-stats" id="adminStats"></div>
+    <div class="admin-card">
+      <div class="admin-toolbar">
+        <h2>Applications</h2>
+        <div class="admin-actions">
+          <input type="text" id="searchInput" placeholder="Search name, email, phone..." class="admin-search">
+          <select id="filterCourse">
+            <option value="">All courses</option>
+            <option value="B.Tech CSE">B.Tech CSE</option>
+            <option value="B.Tech CS">B.Tech CS</option>
+            <option value="B.Tech ECE">B.Tech ECE</option>
+            <option value="B.Tech EEE">B.Tech EEE</option>
+            <option value="B.Tech Mechanical">B.Tech Mechanical</option>
+          </select>
+          <select id="filterDept">
+            <option value="">All departments</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="Mechanical">Mechanical</option>
+          </select>
+          <button type="button" onclick="loadData()">Refresh</button>
+          <button type="button" onclick="exportCSV()">Export CSV</button>
+        </div>
+      </div>
+      <div id="tableContainer">
+        <div id="emptyState" class="admin-empty">
+          <div class="admin-empty-icon">📋</div>
+          <p>Loading applications…</p>
+        </div>
+        <div class="table-wrap" id="tableWrap" style="display: none;">
+          <table id="dataTable"></table>
+        </div>
+      </div>
+      <p class="admin-count" id="adminCount"></p>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

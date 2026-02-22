@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply – KPRIT Admission Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="logo">
+      <span class="logo-icon">📚</span>
+      <span class="logo-text">KPRIT Admission Portal</span>
+    </a>
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/apply.html" class="nav-active">Apply</a>
+      <a href="/programs.html">Programs</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="header-right">
+      <span class="badge">Admissions 2026</span>
+      <a href="/admin.html" class="admin-btn">Admin</a>
+    </div>
+  </header>
+
+  <main class="apply-main">
+    <section class="form-hero">
+      <div class="form-hero-bg">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80" alt="Campus">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="form-hero-content">
+        <h1>Admission Application</h1>
+        <p>Complete all sections. Fields marked with * are required.</p>
+        <p class="datetime" id="datetime"></p>
+      </div>
+    </section>
+
+    <section class="center-area form-section-wrap">
+      <div class="form-card form-card-wide">
+        <form id="admissionForm">
+          <!-- Personal -->
+          <fieldset class="form-section">
+            <legend><span class="step-num">1</span> Personal Details</legend>
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input id="name" name="name" placeholder="As per certificate" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" min="1990-01-01" max="2012-12-31" required>
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender *</label>
+                <select id="gender" name="gender" required>
+                  <option value="">Select</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" placeholder="your.email@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input id="phone" name="phone" placeholder="10 digits" required maxlength="10">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nationality">Nationality</label>
+                <input id="nationality" name="nationality" placeholder="e.g. Indian">
+              </div>
+              <div class="form-group">
+                <label for="bloodGroup">Blood Group</label>
+                <select id="bloodGroup" name="bloodGroup">
+                  <option value="">Select</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Academic -->
+          <fieldset class="form-section">
+            <legend><span class="step-num">2</span> Academic Details</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="tenth">10th Score / CGPA *</label>
+                <input id="tenth" name="tenth" type="text" placeholder="e.g. 9.6" required inputmode="decimal">
+              </div>
+              <div class="form-group">
+                <label for="twelfth">12th Score / CGPA *</label>
+                <input id="twelfth" name="twelfth" type="text" placeholder="e.g. 9.3" required inputmode="decimal">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rank">Rank</label>
+                <input id="rank" name="rank" placeholder="Admission / entrance rank">
+              </div>
+              <div class="form-group">
+                <label for="course">Course *</label>
+                <select id="course" name="course" required>
+                  <option value="">Select</option>
+                  <option value="B.Tech CSE">B.Tech CSE</option>
+                  <option value="B.Tech CS">B.Tech CS</option>
+                  <option value="B.Tech ECE">B.Tech ECE</option>
+                  <option value="B.Tech EEE">B.Tech EEE</option>
+                  <option value="B.Tech Mechanical">B.Tech Mechanical</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mode">Mode</label>
+              <select id="mode" name="mode">
+                <option value="Regular">Regular</option>
+                <option value="Lateral">Lateral</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- Address -->
+          <fieldset class="form-section">
+            <legend><span class="step-num">3</span> Address</legend>
+            <div class="form-group">
+              <label for="address">Address (Line 1)</label>
+              <input id="address" name="address" placeholder="House no., building, area">
+            </div>
+            <div class="form-group">
+              <label for="street">Street</label>
+              <input id="street" name="street" placeholder="Street name">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City *</label>
+                <input id="city" name="city" placeholder="City" required>
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input id="state" name="state" placeholder="State">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input id="pincode" name="pincode" placeholder="e.g. 500078" maxlength="6">
+              </div>
+              <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input id="zip" name="zip" placeholder="If different from pincode">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Guardian -->
+          <fieldset class="form-section">
+            <legend><span class="step-num">4</span> Guardian / Parent</legend>
+            <div class="form-group">
+              <label for="guardian">Guardian Name</label>
+              <input id="guardian" name="guardian" placeholder="Parent or guardian full name">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guardianP">Guardian Phone</label>
+                <input id="guardianP" name="guardianP" placeholder="10 digits">
+              </div>
+              <div class="form-group">
+                <label for="occupatio">Occupation</label>
+                <input id="occupatio" name="occupatio" placeholder="Guardian occupation">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Course / Department -->
+          <fieldset class="form-section">
+            <legend><span class="step-num">5</span> Department & Year</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="departme">Department *</label>
+                <select id="departme" name="departme" required>
+                  <option value="">Select</option>
+                  <option value="CSE">CSE</option>
+                  <option value="ECE">ECE</option>
+                  <option value="EEE">EEE</option>
+                  <option value="Mechanical">Mechanical</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="year">Admission Year *</label>
+                <input id="year" name="year" placeholder="e.g. 2026" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>KPRIT Admission Portal · Admissions Open 2026</p>
+  </footer>
+
+  <div id="successModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-icon">🎓</div>
+      <h2 id="modalTitle">Application Submitted</h2>
+      <p>Thank you for applying. We will be in touch soon.</p>
+      <button type="button" class="modal-btn" onclick="closeModal()">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

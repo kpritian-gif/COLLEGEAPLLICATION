@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kommuri Pratap Reddy Institute of Technology – Admission Portal</title>
+  <meta name="description" content="KPRIT Ghanpur – Kommuri Pratap Reddy Institute of Technology, Ghatkesar. EAMCET/ECET Code KPRT. NAAC A, NBA, JNTUH. B.Tech CSE, AIML, ECE, Civil. Apply for 2026.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#home" class="logo" data-route="home">
+      <span class="logo-icon">🏫🎓</span>
+      <span class="logo-text">KPRIT Admission</span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" class="nav-link nav-active" data-route="home">Home</a>
+      <a href="#apply" class="nav-link" data-route="apply">Apply</a>
+      <a href="#programs" class="nav-link" data-route="programs">Programs</a>
+      <a href="#about" class="nav-link" data-route="about">About</a>
+      <a href="#contact" class="nav-link" data-route="contact">Contact</a>
+      <a href="#gallery" class="nav-link" data-route="gallery">Gallery</a>
+    </nav>
+    <div class="header-right">
+      <button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">🌙</button>
+      <span class="badge">Admissions 2026</span>
+      <a href="#admin" class="admin-btn nav-link" data-route="admin">Admin</a>
+    </div>
+  </header>
+
+  <main id="app" class="app-wrap">
+    <!-- HOME -->
+    <div id="view-home" class="view" data-view="home">
+      <section class="hero">
+        <div class="hero-bg">
+          <img src="https://kpritech.ac.in/wp-content/uploads/2024/12/College.jpg" alt="KPRIT Campus – Kommuri Pratap Reddy Institute of Technology" class="hero-img" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80';this.alt='KPRIT Campus';">
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <p class="hero-tag">Kommuri Pratap Reddy Institute of Technology</p>
+          <h1>Welcome to KPRIT</h1>
+          <p class="hero-desc">Ghanpur Village, Ghatkesar · EAMCET / ECET Code: <strong>KPRT</strong> · NAAC A · NBA · JNTUH · 22-acre green campus. Apply for B.Tech 2026.</p>
+          <p class="datetime" id="datetime"></p>
+          <a href="#apply" class="cta-scroll nav-link" data-route="apply">Apply Now →</a>
+        </div>
+      </section>
+      <section class="study-visual">
+        <div class="study-strip">
+          <img src="https://kpritech.ac.in/wp-content/uploads/2025/05/kprit-college-nature-5-scaled.webp" alt="KPRIT Ghanpur Campus" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80'">
+          <img src="https://kpritech.ac.in/wp-content/uploads/2025/05/kprit-college-nature-3-scaled.webp" alt="KPRIT Green Campus" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80'">
+          <img src="https://kpritech.ac.in/wp-content/uploads/2025/05/kprit-college-nature-7-scaled.webp" alt="KPRIT Campus" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80'">
+        </div>
+      </section>
+      <section class="features section-pad">
+        <div class="container">
+          <h2 class="section-title">Why KPRIT</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <span class="feature-icon">🏆</span>
+              <h3>NAAC A · NBA</h3>
+              <p>Accredited institution. Outcome-based education, quality labs and faculty.</p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-icon">🌿</span>
+              <h3>22-Acre Green Campus</h3>
+              <p>Ghanpur Village, Ghatkesar. Lush, pollution-free, ragging-free. Hostels, sports, 24×7 WiFi.</p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-icon">🎓</span>
+              <h3>B.Tech Programs</h3>
+              <p>CSE, CSE (AIML), ECE, Civil — JNTUH affiliated, AICTE approved. EAMCET/ECET Code: KPRT.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="steps section-pad section-alt">
+        <div class="container">
+          <h2 class="section-title">How to Apply</h2>
+          <ol class="steps-list">
+            <li><strong>Go to Apply</strong> — Click Apply in the menu and fill the single form.</li>
+            <li><strong>Enter details</strong> — Personal, academic, address, guardian, and course.</li>
+            <li><strong>Submit</strong> — Get instant confirmation. No page reload.</li>
+          </ol>
+          <p class="steps-cta"><a href="#apply" class="btn-primary nav-link" data-route="apply">Go to Application Form</a></p>
+        </div>
+      </section>
+      <section class="section-pad quick-links-wrap">
+        <div class="container">
+          <h2 class="section-title">Quick Links</h2>
+          <p class="quick-links-desc">Everything you need – same as the official KPRIT website.</p>
+          <div class="quick-links-grid">
+            <a href="https://kpritech.ac.in/faq" target="_blank" rel="noopener" class="quick-link-card">
+              <span class="quick-link-icon">❓</span>
+              <span>FAQ</span>
+            </a>
+            <a href="https://kpritech.ac.in/contact-us/" target="_blank" rel="noopener" class="quick-link-card">
+              <span class="quick-link-icon">📞</span>
+              <span>Schedule a Tour</span>
+            </a>
+            <a href="https://www.kpritech.ac.in" target="_blank" rel="noopener" class="quick-link-card">
+              <span class="quick-link-icon">🌐</span>
+              <span>Official Website</span>
+            </a>
+            <a href="#contact" class="quick-link-card nav-link" data-route="contact">
+              <span class="quick-link-icon">✉️</span>
+              <span>Enquire Now</span>
+            </a>
+            <a href="#gallery" class="quick-link-card nav-link" data-route="gallery">
+              <span class="quick-link-icon">🖼️</span>
+              <span>Campus Gallery</span>
+            </a>
+            <a href="#programs" class="quick-link-card nav-link" data-route="programs">
+              <span class="quick-link-icon">🎓</span>
+              <span>Programs</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- APPLY -->
+    <div id="view-apply" class="view" data-view="apply">
+      <section class="form-hero">
+        <div class="form-hero-bg">
+          <img src="https://kpritech.ac.in/wp-content/uploads/2024/12/College.jpg" alt="KPRIT Campus" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80'">
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="form-hero-content">
+          <h1>Admission Application</h1>
+          <p>KomMuri Pratap Reddy Institute of Technology · B.Tech 2026. Complete all sections.</p>
+          <p class="datetime" id="datetime-apply"></p>
+        </div>
+      </section>
+      <section class="center-area form-section-wrap">
+        <div class="form-card form-card-wide">
+          <form id="admissionForm">
+            <fieldset class="form-section">
+              <legend><span class="step-num">1</span> Personal Details</legend>
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input id="name" name="name" placeholder="As per certificate" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="dob">Date of Birth *</label>
+                  <input type="date" id="dob" name="dob" min="1990-01-01" max="2012-12-31" required>
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender *</label>
+                  <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input id="email" name="email" type="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone *</label>
+                  <input id="phone" name="phone" placeholder="10 digits" required maxlength="10">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nationality">Nationality</label>
+                  <input id="nationality" name="nationality" placeholder="e.g. Indian">
+                </div>
+                <div class="form-group">
+                  <label for="bloodGroup">Blood Group</label>
+                  <select id="bloodGroup" name="bloodGroup">
+                    <option value="">Select</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <select id="category" name="category">
+                    <option value="">Select</option>
+                    <option value="General">General</option>
+                    <option value="OBC">OBC</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                    <option value="EWS">EWS</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="religion">Religion</label>
+                  <select id="religion" name="religion">
+                    <option value="">Select</option>
+                    <option value="Hinduism">Hinduism</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Christianity">Christianity</option>
+                    <option value="Sikhism">Sikhism</option>
+                    <option value="Buddhism">Buddhism</option>
+                    <option value="Jainism">Jainism</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend><span class="step-num">2</span> Academic Details</legend>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="tenth">10th Score / CGPA *</label>
+                  <input id="tenth" name="tenth" type="text" placeholder="e.g. 9.6 or 95" required inputmode="decimal">
+                </div>
+                <div class="form-group">
+                  <label for="twelfth">12th Score / CGPA *</label>
+                  <input id="twelfth" name="twelfth" type="text" placeholder="e.g. 9.3 or 92" required inputmode="decimal">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="tenthBoard">10th Board</label>
+                  <select id="tenthBoard" name="tenthBoard">
+                    <option value="">Select</option>
+                    <option value="SSC">SSC (Telangana/AP)</option>
+                    <option value="CBSE">CBSE</option>
+                    <option value="ICSE">ICSE</option>
+                    <option value="State Board">State Board</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="twelfthBoard">12th Board</label>
+                  <select id="twelfthBoard" name="twelfthBoard">
+                    <option value="">Select</option>
+                    <option value="BIE">BIE (Telangana/AP)</option>
+                    <option value="CBSE">CBSE</option>
+                    <option value="ISC">ISC</option>
+                    <option value="State Board">State Board</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="rank">Entrance Rank</label>
+                  <input id="rank" name="rank" placeholder="EAMCET / JEE / ECET rank">
+                </div>
+                <div class="form-group">
+                  <label for="examType">Entrance Exam</label>
+                  <select id="examType" name="examType">
+                    <option value="">Select</option>
+                    <option value="EAMCET">EAMCET</option>
+                    <option value="JEE Main">JEE Main</option>
+                    <option value="ECET">ECET</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="course">Course *</label>
+                  <select id="course" name="course" required>
+                    <option value="">Select</option>
+                    <option value="B.Tech CSE">B.Tech CSE</option>
+                    <option value="B.Tech CS">B.Tech CS</option>
+                    <option value="B.Tech ECE">B.Tech ECE</option>
+                    <option value="B.Tech EEE">B.Tech EEE</option>
+                    <option value="B.Tech Mechanical">B.Tech Mechanical</option>
+                    <option value="B.Tech CSE (AI&ML)">B.Tech CSE (AIML)</option>
+                    <option value="B.Tech CSE (Data Science)">B.Tech CSE (Data Science)</option>
+                    <option value="B.Tech Civil">B.Tech Civil</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="mode">Mode *</label>
+                  <select id="mode" name="mode">
+                    <option value="Regular">Regular</option>
+                    <option value="Lateral">Lateral Entry</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="medium">Medium of Instruction (in 12th)</label>
+                <select id="medium" name="medium">
+                  <option value="">Select</option>
+                  <option value="English">English</option>
+                  <option value="Telugu">Telugu</option>
+                  <option value="Hindi">Hindi</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend><span class="step-num">3</span> Address</legend>
+              <div class="form-group">
+                <label for="address">Address (Line 1) *</label>
+                <input id="address" name="address" placeholder="House no., building, area" required>
+              </div>
+              <div class="form-group">
+                <label for="street">Street</label>
+                <input id="street" name="street" placeholder="Street name">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">City *</label>
+                  <input id="city" name="city" placeholder="City" required>
+                </div>
+                <div class="form-group">
+                  <label for="state">State *</label>
+                  <select id="state" name="state" required>
+                    <option value="">Select State</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pincode">Pincode *</label>
+                  <input id="pincode" name="pincode" placeholder="e.g. 500078" maxlength="6" required>
+                </div>
+                <div class="form-group">
+                  <label for="zip">Zip Code</label>
+                  <input id="zip" name="zip" placeholder="If different">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend><span class="step-num">4</span> Guardian / Parent</legend>
+              <div class="form-group">
+                <label for="guardian">Guardian Name *</label>
+                <input id="guardian" name="guardian" placeholder="Parent or guardian full name" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="guardianP">Guardian Phone *</label>
+                  <input id="guardianP" name="guardianP" placeholder="10 digits" maxlength="10">
+                </div>
+                <div class="form-group">
+                  <label for="occupatio">Occupation</label>
+                  <select id="occupatio" name="occupatio">
+                    <option value="">Select</option>
+                    <option value="Government">Government</option>
+                    <option value="Private">Private</option>
+                    <option value="Business">Business</option>
+                    <option value="Agriculture">Agriculture</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Retired">Retired</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="guardianEmail">Guardian Email</label>
+                <input id="guardianEmail" name="guardianEmail" type="email" placeholder="Optional">
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend><span class="step-num">5</span> Department & Year</legend>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="departme">Department *</label>
+                  <select id="departme" name="departme" required>
+                    <option value="">Select</option>
+<option value="CSE">CSE</option>
+                  <option value="ECE">ECE</option>
+                  <option value="EEE">EEE</option>
+                  <option value="Mechanical">Mechanical</option>
+                  <option value="CIVIL">Civil</option>
+                </select>
+                </div>
+                <div class="form-group">
+                  <label for="year">Admission Year *</label>
+                  <input id="year" name="year" placeholder="e.g. 2026" value="2026" required>
+                </div>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- PROGRAMS -->
+    <div id="view-programs" class="view" data-view="programs">
+      <section class="page-hero">
+        <h1>Programs</h1>
+        <p>B.Tech programs at KPRIT – JNTUH affiliated, AICTE approved.</p>
+      </section>
+      <section class="section-pad">
+        <div class="container">
+          <div class="programs-grid" id="programsGrid"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="view-about" class="view" data-view="about">
+      <section class="page-hero">
+        <h1>About KPRIT</h1>
+        <p>KomMuri Pratap Reddy Institute of Technology · Ghanpur, Ghatkesar</p>
+      </section>
+      <section class="section-pad">
+        <div class="container container-narrow">
+          <div class="about-content">
+            <p><strong>Vision:</strong> “Everyone can imagine but not everyone can implement. Here is a place for your imagined idea to be innovated and inspire.” KPRIT powers your imagination with innovation and inspiration through quality technical education on par with international standards.</p>
+            <p>KPRIT is located at <strong>Ghanpur Village, Ghatkesar (M)</strong>, Malkajigiri District, Telangana — about 9 km from Uppal bus depot — on a <strong>22-acre</strong> lush green, pollution-free campus. Established in <strong>2008</strong>, the institute is affiliated to <strong>JNTUH</strong>, approved by <strong>AICTE</strong>, with <strong>NAAC A Grade</strong> and <strong>NBA</strong> recognition. <strong>EAMCET / ECET Code: KPRT.</strong></p>
+            <p><strong>Facilities:</strong> ICT-enabled smart classrooms & seminar halls, state-of-the-art laboratories, well-stocked digital library, 24×7 WiFi, RO purified water, gym, cafeteria with hygienic food, spacious auditorium (150 capacity), separate hostels for boys and girls, transport from all parts of the city, cricket/football/volleyball/basketball/kabaddi grounds, ragging-free environment, round-the-clock security, easy access for differently-abled.</p>
+            <p><strong>Leadership:</strong> Sri Kommuri Pratap Reddy (Chairman), Mr Prashanth Kommuri (Vice-Chairman), Mr Rakesh Kommuri (Secretary), Prof. B. Sudheer Prem Kumar (Director & Principal), Dr. S. Sreenath Kashyap (Vice-Principal).</p>
+            <p><a href="https://www.kpritech.ac.in" target="_blank" rel="noopener" class="btn-primary">Official website</a> <a href="#apply" class="btn-secondary nav-link" data-route="apply">Apply for admission</a></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="view-contact" class="view" data-view="contact">
+      <section class="contact-hero">
+        <div class="contact-hero-bg">
+          <img src="https://kpritech.ac.in/wp-content/uploads/2024/12/College.jpg" alt="KPRIT – Kommuri Pratap Reddy Institute of Technology" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80'">
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="contact-hero-content">
+          <h1>Contact Us</h1>
+          <p>Kommuri Pratap Reddy Institute of Technology · Ghanpur, Ghatkesar</p>
+        </div>
+      </section>
+      <section class="section-pad contact-section">
+        <div class="container">
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div class="contact-card-icon">📍</div>
+              <h3>College Address</h3>
+              <p>Sy No 1140, Near Infosys, Adjacent to NTPC Power Grid, Ghanpur Village, Ghatkesar (M), Malkajigiri Dist., Telangana 500 088</p>
+              <p class="contact-card-note">Regd. Office: F.No.501, Sai Datta Arcade, 5th Floor, Opp. KFC, Himayat Nagar, Hyderabad 500 029</p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card-icon">📞</div>
+              <h3>Admissions &amp; Enquiries</h3>
+              <p><a href="tel:+919542042666">+91-95420 42666</a></p>
+              <p>Chief Admin: <a href="tel:+919542083666">+91 9542083666</a></p>
+              <p>Dean (CR): <a href="tel:+919542037000">+91 9542037000</a></p>
+              <p>Transport &amp; Hostel: <a href="tel:+919848569917">+91 9848569917</a></p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card-icon">✉️</div>
+              <h3>Email</h3>
+              <p><a href="mailto:info@kpritech.ac.in">info@kpritech.ac.in</a></p>
+              <p><a href="mailto:studentverification@kpritech.ac.in">studentverification@kpritech.ac.in</a></p>
+              <p><a href="mailto:principal@kpritech.ac.in">principal@kpritech.ac.in</a></p>
+              <p><a href="mailto:ao@kpritech.ac.in">ao@kpritech.ac.in</a></p>
+            </div>
+            <div class="contact-card contact-card-social">
+              <div class="contact-card-icon">🌐</div>
+              <h3>Follow KPRIT</h3>
+              <div class="social-icon-links">
+                <a href="https://www.youtube.com/user/KPRITCampus" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">▶</a>
+                <a href="https://x.com/KPRITcollege" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter">𝕏</a>
+                <a href="https://www.instagram.com/kprit_official/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">📷</a>
+                <a href="https://www.facebook.com/kprit.college" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">f</a>
+                <a href="https://www.linkedin.com/school/kommuri-pratap-reddy-institute-of-technology/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">in</a>
+              </div>
+              <p><a href="https://www.kpritech.ac.in" target="_blank" rel="noopener" class="btn-primary">Official Website</a></p>
+            </div>
+          </div>
+          <p class="contact-apply-cta"><a href="#apply" class="btn-primary nav-link" data-route="apply">Apply for admission</a></p>
+        </div>
+      </section>
+    </div>
+
+    <!-- GALLERY -->
+    <div id="view-gallery" class="view" data-view="gallery">
+      <section class="page-hero">
+        <h1>Campus Gallery</h1>
+        <p>KPRIT Ghanpur – Ghatkesar campus and facilities</p>
+      </section>
+      <section class="section-pad">
+        <div class="container">
+          <div class="gallery-official-links">
+            <h2 class="section-title">Official KPRIT gallery</h2>
+            <p class="gallery-desc">View campus photos, infrastructure, and green campus on the college website.</p>
+            <div class="gallery-buttons">
+              <a href="https://kpritech.ac.in/infrastructure/" target="_blank" rel="noopener" class="btn-primary">Infrastructure – KPRIT</a>
+              <a href="https://kpritech.ac.in/campus-in-harmony-with-nature/" target="_blank" rel="noopener" class="btn-secondary">Campus in Harmony with Nature</a>
+              <a href="https://www.collegebatch.com/3899-kommuri-pratap-reddy-institute-of-technology-campus-tour-ghatkesar" target="_blank" rel="noopener" class="btn-secondary">Campus Tour (CollegeBatch)</a>
+            </div>
+          </div>
+          <div class="gallery-grid" id="galleryGrid"></div>
+          <p class="gallery-caption">Campus life at KPRIT Ghanpur · For more photos visit <a href="https://kpritech.ac.in/infrastructure/" target="_blank" rel="noopener">kpritech.ac.in</a></p>
+        </div>
+      </section>
+    </div>
+
+    <!-- SUCCESS (after submit) -->
+    <div id="view-success" class="view" data-view="success">
+      <section class="success-view-inner">
+        <div class="success-card">
+          <div class="modal-icon">🎓</div>
+          <h1>Application Submitted</h1>
+          <p>Thank you for applying to KomMuri Pratap Reddy Institute of Technology. We will review your application and contact you soon.</p>
+          <a href="#home" class="btn-primary nav-link" data-route="home">Back to Home</a>
+          <a href="#apply" class="btn-secondary nav-link" data-route="apply">Submit another</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ADMIN -->
+    <div id="view-admin" class="view" data-view="admin">
+      <div class="admin-wrap">
+        <div class="admin-stats" id="adminStats"></div>
+        <div class="admin-card">
+          <div class="admin-toolbar">
+            <h2>Applications</h2>
+            <div class="admin-actions">
+              <input type="text" id="searchInput" placeholder="Search name, email, phone..." class="admin-search">
+              <select id="filterCourse"><option value="">All courses</option></select>
+              <select id="filterDept"><option value="">All departments</option></select>
+              <button type="button" id="btnRefresh">Refresh</button>
+              <button type="button" id="btnExport">Export CSV</button>
+            </div>
+          </div>
+          <div id="tableContainer">
+            <div id="emptyState" class="admin-empty"><div class="admin-empty-icon">📋</div><p>Loading…</p></div>
+            <div class="table-wrap" id="tableWrap" style="display:none;"><table id="dataTable"></table></div>
+          </div>
+          <p class="admin-count" id="adminCount"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="#home" class="nav-link" data-route="home">Home</a>
+      <a href="#apply" class="nav-link" data-route="apply">Apply</a>
+      <a href="#programs" class="nav-link" data-route="programs">Programs</a>
+      <a href="#about" class="nav-link" data-route="about">About</a>
+      <a href="#contact" class="nav-link" data-route="contact">Contact</a>
+      <a href="#gallery" class="nav-link" data-route="gallery">Gallery</a>
+      <a href="https://kpritech.ac.in/faq" target="_blank" rel="noopener">FAQ</a>
+      <a href="https://www.kpritech.ac.in" target="_blank" rel="noopener">Official Site</a>
+    </div>
+    <p class="footer-credits">KomMuri Pratap Reddy Institute of Technology · Admissions 2026 · EAMCET/ECET Code: KPRT</p>
+  </footer>
+
+  <button type="button" id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top" title="Go to top">↑</button>
+
+  <script src="app.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
